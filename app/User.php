@@ -1,14 +1,28 @@
 <?php
-
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Moloquent;
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Foundation\Auth\Access\Authorizable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Jenssegers\Mongodb\Eloquent\SoftDeletes;
 
-class User extends Authenticatable
+class User extends Moloquent implements
+    AuthenticatableContract,
+    AuthorizableContract,
+    CanResetPasswordContract
 {
-    use Notifiable;
-
+    use Authenticatable, Authorizable, CanResetPassword;
+    use Notifiable, SoftDeletes;
+    
+    protected $collection = 'users';
+    
+    protected $dates = ['deleted_at'];
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -17,7 +31,6 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
-
     /**
      * The attributes that should be hidden for arrays.
      *
