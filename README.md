@@ -7,6 +7,7 @@
 
 ## Server Requirements:
 - PHP >= 7.0.0
+- MongoDB 3
 - MongoDB PHP driver
 - OpenSSL PHP Extension
 - PDO PHP Extension
