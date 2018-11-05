@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//****** Posts ******//
+
+//Route::post('/post/store', 'PostController@store');

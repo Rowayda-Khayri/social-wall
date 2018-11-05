@@ -19,6 +19,8 @@ class User extends Moloquent implements
     use Authenticatable, Authorizable, CanResetPassword;
     use Notifiable, SoftDeletes;
     
+    protected $connection = 'mongodb';
+    
     protected $collection = 'users';
     
     protected $dates = ['deleted_at'];
