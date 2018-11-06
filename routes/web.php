@@ -18,4 +18,10 @@ Route::get('/', function () {
 
 //****** Posts ******//
 
-//Route::post('/post/store', 'PostController@store');
+Route::get('/wall', 'PostController@index');
+Route::get('/post/create', 'PostController@create');
+Route::post('/post/store', 'PostController@store');
+Route::get('/post/{id}/like1', 'PostController@like1');
+Route::get('/post/{id}/like2', 'PostController@like2');
+Route::get('/post/{id}/share', 'PostController@share');
+Route::post('/post/{id}/comment', 'PostController@comment');

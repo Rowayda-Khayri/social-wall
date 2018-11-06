@@ -21,6 +21,6 @@ class Post extends Moloquent
      * @var array
      */
     protected $fillable = [
-        'title', 'body', 'author', 'likes1', 'likes2', 'shares'
+        'title', 'body', 'author', 'likes1', 'likes2', 'shares', 'pinned', 'comments' 
     ];
 }
