@@ -23,4 +23,12 @@ class Post extends Moloquent
     protected $fillable = [
         'title', 'body', 'author', 'likes1', 'likes2', 'shares', 'pinned', 'comments' 
     ];
+    
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+    
+    public function comments(){
+        return $this->embedsMany('App\Comment');
+    }
 }

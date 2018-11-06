@@ -32,10 +32,10 @@
         </div>
         
         <div class="postComments">
-            @foreach($post->comments as $comment)
+            @foreach($comments as $comment)
             <div class="postComment">
-                <h2 class="commentAuthor">Author: {{$comment->author}}</h2>
-                <p class="commentBody">{{$comment->body}}</p>
+                <h2 class="commentAuthor">Author: </h2>
+                <p class="commentBody"></p>
             </div>
             @endforeach
         </div>

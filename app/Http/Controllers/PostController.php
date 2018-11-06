@@ -14,8 +14,8 @@ class PostController extends Controller
         
         $posts = Post::orderBy('created_at', 'desc')->get();
         
-//        dd($pinnedPost);
-        return view('wall', compact('pinnedPost', 'posts'));
+        
+        return view('wall', compact('pinnedPost', 'posts', 'comments'));
     }
     
     public function create(){
@@ -34,6 +34,8 @@ class PostController extends Controller
         $post->pinned = 0;
         
         $post->save();
+        
+        return redirect('/wall');
         
     }
     
