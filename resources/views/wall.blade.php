@@ -19,25 +19,26 @@
             <h3 class="postTitle">Title: {{$post->title}}</h3>
             <p class="postBody" style="font-size:22px;">{{$post->body}}</p>
         </div>
-        <div class="postCounters" style="margin-left:50px;width: 300px;height: 100px;
+        <div class="postCounters" style="margin-left:50px;width: 300px;height: 50px;
     border: 5px solid #CB4335;margin: 2px;">
-            <h2 class="postLikes1" style="display:inline-block;margin-left: 10px;">{{$post->likes1}}</h2>
+            <h4 class="postLikes1" style="display:inline-block;margin-left: 10px;">{{$post->likes1}}</h4>
             <i class="em em---1" style="display:inline-block;margin-left:10px;" ></i>
             
-            <h2 class="postLikes2" style="display:inline-block;margin-left:50px;">{{$post->likes2}}</h2>
+            <h4 class="postLikes2" style="display:inline-block;margin-left:50px;">{{$post->likes2}}</h4>
             <i class="em em-laughing" style="display:inline-block;margin-left:10px;"></i>
             
-            <h2 class="postShares" style="display:inline-block;margin-left:50px;"></h2>
+            <h4 class="postShares" style="display:inline-block;margin-left:50px;"></h4>
             <i class="em em-arrows_clockwise" style="display:inline-block;margin-left:10px;"></i>
         </div>
         
-        <div class="postComments">
-            @foreach($comments as $comment)
+        <div class="postComments" style="margin-left:50px;width: 900px;
+    border: 5px solid #CB4335;margin: 2px;">
+            
             <div class="postComment">
-                <h2 class="commentAuthor">Author: </h2>
-                <p class="commentBody"></p>
+                <h3 class="commentAuthor" style="margin-left:10px;">Comment Author: </h3>
+                <p class="commentBody" style="margin-left:10px;">Comment Body</p>
             </div>
-            @endforeach
+            
         </div>
         
     </div>

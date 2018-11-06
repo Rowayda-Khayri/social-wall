@@ -14,8 +14,24 @@ class PostController extends Controller
         
         $posts = Post::orderBy('created_at', 'desc')->get();
         
-        
-        return view('wall', compact('pinnedPost', 'posts', 'comments'));
+//        $comments = array();
+//        
+//        foreach ($posts as $post){
+//            for($i = 0; $i<count($posts);$i++){
+//                $comment = array();
+//                foreach ($post->comments() as $c){
+////                    dd($post->comments());
+//                    array_push($comment, $c);
+//                }
+//                array_push($comments, $comment);
+//                
+//            }
+//            
+//        }
+//        $comment = $posts[0]->comments()->first();
+//        dd($pinnedPost);
+//        return $comments[3];
+        return view('wall', compact('pinnedPost', 'posts'));
     }
     
     public function create(){
