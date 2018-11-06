@@ -14,7 +14,8 @@ class PostController extends Controller
         
         $posts = Post::orderBy('created_at', 'desc')->get();
         
-        return view('wall', compact($pinnedPost, $posts));
+//        dd($pinnedPost);
+        return view('wall', compact('pinnedPost', 'posts'));
     }
     
     public function create(){
@@ -49,7 +50,7 @@ class PostController extends Controller
     
     public function comment(Request $request, $id){
         
-        DB::collection('posts')->where('_id', $id)->push('comments', ['author' => 'author_name', 'body' => $request->comment]);
+        DB::collection('posts')->where('_id', $id)->push('comments', ['author' => $request->author, 'body' => $request->comment]);
     }
     
     public function share($id){
