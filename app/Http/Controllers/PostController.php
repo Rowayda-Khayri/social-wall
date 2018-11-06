@@ -51,17 +51,17 @@ class PostController extends Controller
         $post->pinned = 0;
         $post->save();
         
-        $comments = array();
-        foreach ($request->comments as $rc){
-//            return $comment['author'];
-            $comment = new Comment();
-            $comment->author = $rc['author']; 
-            $comment->body = $rc['body']; 
-            $comment->save();
-            $post->comments()->save($comment);
-//            array_push($comments, $comment);
-        }
-        $post->comments()->save($comments);
+//        $comments = array();
+//        foreach ($request->comments as $rc){
+////            return $comment['author'];
+//            $comment = new Comment();
+//            $comment->author = $rc['author']; 
+//            $comment->body = $rc['body']; 
+//            $comment->save();
+//            $post->comments()->save($comment);
+////            array_push($comments, $comment);
+//        }
+//        $post->comments()->save($comments);
 //        return $request->comments;
         
         
