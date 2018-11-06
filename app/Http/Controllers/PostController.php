@@ -37,13 +37,17 @@ class PostController extends Controller
     
     public function like1($id){
         
+        Post::find("$id")->increment('likes1');
+        
     }
     
     public function like2($id){
         
+        Post::find("$id")->increment('likes2');
     }
     
     public function comment(Request $request, $id){
+        
         
     }
     
