@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -48,7 +49,7 @@ class PostController extends Controller
     
     public function comment(Request $request, $id){
         
-        
+        DB::collection('posts')->where('_id', $id)->push('comments', ['author' => 'author_name', 'body' => $request->comment]);
     }
     
     public function share($id){
