@@ -9,6 +9,11 @@ class PostController extends Controller
 {
     public function index(){
         
+        $pinnedPost = Post::where('pinned',1);
+        
+        $posts = Post::orderBy('created_at', 'desc')->get();
+        
+        return view('wall', compact($pinnedPost, $posts));
     }
     
     public function create(){
