@@ -31,6 +31,14 @@
             <i class="em em-arrows_clockwise" style="display:inline-block;margin-left:10px;"></i>
         </div>
         
+        <div class="postComments">
+            @foreach($post->comments as $comment)
+            <div class="postComment">
+                <h2 class="commentAuthor">Author: {{$comment->author}}</h2>
+                <p class="commentBody">{{$comment->body}}</p>
+            </div>
+            @endforeach
+        </div>
         
     </div>
     <br><br>
